@@ -33,6 +33,7 @@ dependencies:
   camera: ^0.8.1
   google_ml_kit: ^0.16.3
   image_picker: ^0.8.4+2
+   
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -55,7 +56,9 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
-
+  assets: 
+    - assets/ejemplo.png
+    - assets/ejemploCredencial.png
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
