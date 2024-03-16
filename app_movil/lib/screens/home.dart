@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:patron/screens/camera_app.dart';
 import 'package:patron/screens/image_picker_screen.dart';
+import 'package:patron/screens/list_Promotees.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -55,6 +56,23 @@ class HomeScreen extends StatelessWidget {
                 textStyle: const TextStyle(fontSize: 20),
               ),
               child: const Text('Subir archivo'),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                // Implementar la función para subir un archivo
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const ListPromotees()),
+                );
+              },
+              style: ElevatedButton.styleFrom(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 40, vertical: 16),
+                textStyle: const TextStyle(fontSize: 20),
+              ),
+              child: const Text('Lista de promovidos'),
             ),
           ],
         ),

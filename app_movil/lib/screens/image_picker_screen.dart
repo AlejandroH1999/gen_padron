@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -7,9 +9,10 @@ import 'package:patron/models/text_detection.dart';
 import 'package:patron/widgets/text_input_widgets.dart';
 
 class CameraPickerApp extends StatefulWidget {
-  const CameraPickerApp({Key? key}) : super(key: key);
+  const CameraPickerApp({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _CameraPickerAppState createState() => _CameraPickerAppState();
 }
 
@@ -55,7 +58,7 @@ class _CameraPickerAppState extends State<CameraPickerApp> {
                 height: 200,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.0),
-                  image: DecorationImage(
+                  image: const DecorationImage(
                     image: AssetImage('assets/ejemploCredencial.png'),
                     fit: BoxFit.cover,
                   ),
@@ -65,36 +68,71 @@ class _CameraPickerAppState extends State<CameraPickerApp> {
             TextInputWidgets.buildTextField(
               "Apellido Paterno",
               apellidoPaternoController,
+              borderRadius: 20.0, // Añade bordes redondeados
+              borderSide: const BorderSide(
+                  color: Colors.blue, width: 2.0), // Añade un borde
+              prefixIcon: const Icon(Icons.search,
+                  color: Colors.blue), // Icono de búsqueda
             ),
             const SizedBox(height: 10),
             TextInputWidgets.buildTextField(
               "Apellido Materno",
               apellidoMaternoController,
+              borderRadius: 20.0, // Añade bordes redondeados
+              borderSide: const BorderSide(
+                  color: Colors.blue, width: 2.0), // Añade un borde
+              prefixIcon: const Icon(Icons.search,
+                  color: Colors.blue), // Icono de búsqueda
             ),
             const SizedBox(height: 10),
             TextInputWidgets.buildTextField(
               "Nombre",
               nombreController,
+              borderRadius: 20.0, // Añade bordes redondeados
+              borderSide: const BorderSide(
+                  color: Colors.blue, width: 2.0), // Añade un borde
+              prefixIcon: const Icon(Icons.search,
+                  color: Colors.blue), // Icono de búsqueda
             ),
             const SizedBox(height: 10),
             TextInputWidgets.buildTextField(
               "Domicilio",
               domicilioController,
+              borderRadius: 20.0, // Añade bordes redondeados
+              borderSide: const BorderSide(
+                  color: Colors.blue, width: 2.0), // Añade un borde
+              prefixIcon: const Icon(Icons.search,
+                  color: Colors.blue), // Icono de búsqueda
             ),
             const SizedBox(height: 10),
             TextInputWidgets.buildTextField(
               "Colonia",
               coloniaController,
+              borderRadius: 20.0, // Añade bordes redondeados
+              borderSide: const BorderSide(
+                  color: Colors.blue, width: 2.0), // Añade un borde
+              prefixIcon: const Icon(Icons.search,
+                  color: Colors.blue), // Icono de búsqueda
             ),
             const SizedBox(height: 10),
             TextInputWidgets.buildTextField(
               "Sección",
               seccionController,
+              borderRadius: 20.0, // Añade bordes redondeados
+              borderSide: const BorderSide(
+                  color: Colors.blue, width: 2.0), // Añade un borde
+              prefixIcon: const Icon(Icons.search,
+                  color: Colors.blue), // Icono de búsqueda
             ),
             const SizedBox(height: 10),
             TextInputWidgets.buildTextField(
               "CURP",
               curpController,
+              borderRadius: 20.0, // Añade bordes redondeados
+              borderSide: const BorderSide(
+                  color: Colors.blue, width: 2.0), // Añade un borde
+              prefixIcon: const Icon(Icons.search,
+                  color: Colors.blue), // Icono de búsqueda
             ),
             const SizedBox(height: 20),
             ElevatedButton(
@@ -165,7 +203,7 @@ class _CameraPickerAppState extends State<CameraPickerApp> {
                   });
                 }
               },
-              child: Text('Seleccionar Imagen'),
+              child: const Text('Seleccionar Imagen'),
             ),
           ],
         ),

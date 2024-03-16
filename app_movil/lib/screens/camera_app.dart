@@ -167,6 +167,8 @@
 //                   seccion = seccionRegex.firstMatch(extractedText)?.group(1);
 //                 }
 
+// ignore_for_file: avoid_print
+
 //                 setState(() {
 //                   nombreController.text = nombre ?? '';
 //                   apellidoPaternoController.text = apellidoPaterno ?? '';
@@ -200,9 +202,10 @@ import 'package:patron/models/text_detection.dart';
 import 'package:patron/widgets/text_input_widgets.dart';
 
 class CameraApp extends StatefulWidget {
-  const CameraApp({Key? key}) : super(key: key);
+  const CameraApp({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _CameraAppState createState() => _CameraAppState();
 }
 
@@ -285,38 +288,82 @@ class _CameraAppState extends State<CameraApp> {
                   ),
                 ],
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     TextInputWidgets.buildTextField(
-                        "Apellido Paterno", apellidoPaternoController),
-                    SizedBox(height: 10),
+                      "Apellido Paterno", apellidoPaternoController,
+                      borderRadius: 20.0, // Añade bordes redondeados
+                      borderSide: const BorderSide(
+                          color: Colors.blue, width: 2.0), // Añade un borde
+                      prefixIcon: const Icon(Icons.search,
+                          color: Colors.blue), // Icono de búsqueda
+                    ),
+                    const SizedBox(height: 10),
                     TextInputWidgets.buildTextField(
-                        "Apellido Materno", apellidoMaternoController),
-                    SizedBox(height: 10),
-                    TextInputWidgets.buildTextField("Nombre", nombreController),
-                    SizedBox(height: 10),
+                      "Apellido Materno", apellidoMaternoController,
+                      borderRadius: 20.0, // Añade bordes redondeados
+                      borderSide: const BorderSide(
+                          color: Colors.blue, width: 2.0), // Añade un borde
+                      prefixIcon: const Icon(Icons.search,
+                          color: Colors.blue), // Icono de búsqueda
+                    ),
+                    const SizedBox(height: 10),
                     TextInputWidgets.buildTextField(
-                        "Domicilio", domicilioController),
-                    SizedBox(height: 10),
+                      "Nombre", nombreController,
+                      borderRadius: 20.0, // Añade bordes redondeados
+                      borderSide: const BorderSide(
+                          color: Colors.blue, width: 2.0), // Añade un borde
+                      prefixIcon: const Icon(Icons.search,
+                          color: Colors.blue), // Icono de búsqueda
+                    ),
+                    const SizedBox(height: 10),
                     TextInputWidgets.buildTextField(
-                        "Colonia", coloniaController),
-                    SizedBox(height: 10),
+                      "Domicilio", domicilioController,
+                      borderRadius: 20.0, // Añade bordes redondeados
+                      borderSide: const BorderSide(
+                          color: Colors.blue, width: 2.0), // Añade un borde
+                      prefixIcon: const Icon(Icons.search,
+                          color: Colors.blue), // Icono de búsqueda
+                    ),
+                    const SizedBox(height: 10),
                     TextInputWidgets.buildTextField(
-                        "Sección", seccionController),
-                    SizedBox(height: 10),
-                    TextInputWidgets.buildTextField("CURP", curpController),
-                    SizedBox(height: 20),
+                      "Colonia", coloniaController,
+                      borderRadius: 20.0, // Añade bordes redondeados
+                      borderSide: const BorderSide(
+                          color: Colors.blue, width: 2.0), // Añade un borde
+                      prefixIcon: const Icon(Icons.search,
+                          color: Colors.blue), // Icono de búsqueda),
+                    ),
+                    const SizedBox(height: 10),
+                    TextInputWidgets.buildTextField(
+                      "Sección", seccionController,
+                      borderRadius: 20.0, // Añade bordes redondeados
+                      borderSide: const BorderSide(
+                          color: Colors.blue, width: 2.0), // Añade un borde
+                      prefixIcon: const Icon(Icons.search,
+                          color: Colors.blue), // Icono de búsqueda
+                    ),
+                    const SizedBox(height: 10),
+                    TextInputWidgets.buildTextField(
+                      "CURP", curpController,
+                      borderRadius: 20.0, // Añade bordes redondeados
+                      borderSide: const BorderSide(
+                          color: Colors.blue, width: 2.0), // Añade un borde
+                      prefixIcon: const Icon(Icons.search,
+                          color: Colors.blue), // Icono de búsqueda
+                    ),
+                    const SizedBox(height: 20),
                     ElevatedButton(
                       onPressed: () {
                         // Aquí puedes agregar la lógica para guardar los datos
                         // Por ejemplo, puedes guardar los datos en una base de datos o enviarlos a una API
                         // También puedes mostrar un diálogo de confirmación o cualquier otro feedback al usuario
                       },
-                      child: Text('Guardar'),
+                      child: const Text('Guardar'),
                     ),
                   ],
                 ),
@@ -325,10 +372,10 @@ class _CameraAppState extends State<CameraApp> {
           ),
           floatingActionButton: FloatingActionButton(
             child: isDetecting
-                ? CircularProgressIndicator(
+                ? const CircularProgressIndicator(
                     valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
                   )
-                : Icon(Icons.camera),
+                : const Icon(Icons.camera),
             onPressed: () async {
               try {
                 setState(() {
